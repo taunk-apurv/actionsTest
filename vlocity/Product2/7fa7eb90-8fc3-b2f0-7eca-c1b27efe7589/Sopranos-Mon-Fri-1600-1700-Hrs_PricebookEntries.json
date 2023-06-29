@@ -1,0 +1,32 @@
+[
+    {
+        "%vlocity_namespace%__FloorPrice__c": "",
+        "%vlocity_namespace%__OverageCharge__c": "",
+        "%vlocity_namespace%__OverageUOM__c": "",
+        "%vlocity_namespace%__RecurringPrice__c": 0,
+        "%vlocity_namespace%__RecurringUOM__c": "Monthly",
+        "IsActive": true,
+        "IsArchived": false,
+        "Name": "Sopranos Mon-Fri 1600-1700 Hrs",
+        "Pricebook2.Name": "Standard Price Book",
+        "Pricebook2Id": {
+            "Name": "Standard Price Book",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "Pricebook2/Standard Price Book",
+            "VlocityRecordSObjectType": "Pricebook2"
+        },
+        "Product2.%vlocity_namespace%__GlobalKey__c": "7fa7eb90-8fc3-b2f0-7eca-c1b27efe7589",
+        "Product2Id": {
+            "%vlocity_namespace%__GlobalKey__c": "7fa7eb90-8fc3-b2f0-7eca-c1b27efe7589",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Product2/7fa7eb90-8fc3-b2f0-7eca-c1b27efe7589",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "ProductCode": "SPX-SOPR-MF-1600",
+        "UnitPrice": 0,
+        "UseStandardPrice": false,
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "PricebookEntry",
+        "VlocityRecordSourceKey": "PricebookEntry/Pricebook2/Standard Price Book/Product2/7fa7eb90-8fc3-b2f0-7eca-c1b27efe7589"
+    }
+]
