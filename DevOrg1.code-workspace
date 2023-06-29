@@ -2,10 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"name": "actionsDemo",
-			"path": "actionsDemo"
 		}
 	],
 	"settings": {
