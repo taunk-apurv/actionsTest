@@ -1,0 +1,26 @@
+[
+    {
+        "%vlocity_namespace%__Action__c": "Add;Modify;Disconnect;NoChange;Suspend;Resume",
+        "%vlocity_namespace%__ConditionData__c": "",
+        "%vlocity_namespace%__GlobalKey__c": "bfb3942d-110f-45f5-ed3c-f511904c5a82",
+        "%vlocity_namespace%__OrchestrationPlanDefinitionId__c": {
+            "Name": "AdSales_GAMIntegration",
+            "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+            "VlocityLookupRecordSourceKey": "%vlocity_namespace%__OrchestrationPlanDefinition__c/AdSales_GAMIntegration",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__OrchestrationPlanDefinition__c"
+        },
+        "%vlocity_namespace%__OrchestrationPlanId__c": "",
+        "%vlocity_namespace%__Product2Id__c": {
+            "%vlocity_namespace%__GlobalKey__c": "c1356410-fd71-218e-4a21-a90d8b761469",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "Product2/c1356410-fd71-218e-4a21-a90d8b761469",
+            "VlocityRecordSObjectType": "Product2"
+        },
+        "%vlocity_namespace%__Product2Id__r.%vlocity_namespace%__GlobalKey__c": "c1356410-fd71-218e-4a21-a90d8b761469",
+        "%vlocity_namespace%__SubAction__c": "",
+        "Name": "OS1",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__OrchestrationScenario__c",
+        "VlocityRecordSourceKey": "%vlocity_namespace%__OrchestrationScenario__c/OS1/bfb3942d-110f-45f5-ed3c-f511904c5a82/Product2/c1356410-fd71-218e-4a21-a90d8b761469"
+    }
+]
