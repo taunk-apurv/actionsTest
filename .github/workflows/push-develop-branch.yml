@@ -33,7 +33,7 @@ jobs:
 
             #Installing Vlocity Plugin
             - name: "Installing sfdx vlocity plugin"
-              run: sfdx plugins:install vlocity@latest
+              run: sfdx plugins:install vlocity@latest --noprompt
 
 
             # Checkout the source code
