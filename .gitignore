@@ -43,3 +43,7 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+authFile.json
+DevOrg1.code-workspace
+.github/workflows/push-develop-branch.yml
+manifest/package.xml
