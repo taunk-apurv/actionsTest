@@ -17,7 +17,7 @@ jobs:
         if: ${{ github.actor != 'dependabot[bot]' }}
 
         env:
-          SFDX_AUTOUPDATE_DISABLE: true
+          SF_AUTOUPDATE_DISABLE: true
 
         steps:
             # Install Salesforce CLI
@@ -39,7 +39,7 @@ jobs:
             - name: "Installing sfdx vlocity plugin"
               run: |
                   echo "SFDX_AUTOUPDATE_DISABLE=true" >> $GITHUB_ENV
-                  sfdx plugins:install vlocity@latest
+                  sfdx plugins:install vlocity@latest --no-prompt
 
             # Checkout the source code
             - name: 'Checkout source code'
