@@ -38,8 +38,8 @@ jobs:
             #Installing Vlocity Plugin
             - name: "Installing sfdx vlocity plugin"
               run: |
-                  echo "SFDX_AUTOUPDATE_DISABLE=true" >> $GITHUB_ENV
-                  sfdx plugins:install vlocity@latest --no-prompt
+                  echo "SF_AUTOUPDATE_DISABLE=true" >> $GITHUB_ENV
+                  yes | sfdx plugins:install vlocity@latest
 
             # Checkout the source code
             - name: 'Checkout source code'
