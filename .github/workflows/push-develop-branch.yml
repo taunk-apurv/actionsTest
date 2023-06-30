@@ -15,6 +15,10 @@ jobs:
     deploy-branch-to-int-and-staging-orgs:
         runs-on: ubuntu-latest
         if: ${{ github.actor != 'dependabot[bot]' }}
+
+        env:
+          SFDX_AUTOUPDATE_DISABLE: true
+
         steps:
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
@@ -34,8 +38,8 @@ jobs:
             #Installing Vlocity Plugin
             - name: "Installing sfdx vlocity plugin"
               run: |
-                  echo '{"isglobal": true}' > sfdx-config.json
-                  sfdx plugins:install vlocity@latest --json --config sfdx-config.json
+                  echo "SFDX_AUTOUPDATE_DISABLE=true" >> $GITHUB_ENV
+                  sfdx plugins:install vlocity@latest
 
             # Checkout the source code
             - name: 'Checkout source code'
