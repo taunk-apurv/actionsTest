@@ -37,7 +37,6 @@ jobs:
                   echo '{"isglobal": true}' > sfdx-config.json
                   sfdx plugins:install vlocity@latest --json --config sfdx-config.json
 
-
             # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v3
