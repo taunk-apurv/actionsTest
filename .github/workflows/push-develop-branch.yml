@@ -33,7 +33,9 @@ jobs:
 
             #Installing Vlocity Plugin
             - name: "Installing sfdx vlocity plugin"
-              run: sfdx plugins:install vlocity@latest --noprompt
+              run: |
+                  echo '{"isglobal": true}' > sfdx-config.json
+                  sfdx plugins:install vlocity@latest --json --config sfdx-config.json
 
 
             # Checkout the source code
