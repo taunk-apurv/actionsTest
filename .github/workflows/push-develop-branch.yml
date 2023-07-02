@@ -44,10 +44,7 @@ jobs:
             # Install Vlocity Build Tool
             - name: Install Vlocity Build Tool
               run: |
-                  wget https://github.com/vlocityinc/vlocity_build/archive/refs/tags/v7.0.0.zip
-                  unzip v7.0.0.zip
-                  cd vlocity_build-7.0.0
-                  npm install
+                  npm install -g vlocity
                   npx vlocity --version
                 
             # Checkout the source code
