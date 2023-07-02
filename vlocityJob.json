@@ -1,0 +1,10 @@
+{
+    "projectPath": "./vlocity",
+    "gitCheck" : true,
+    "autoUpdateSettings" : true,
+    "autoRetryErrors" : true,
+    "maxDepth": 5,
+    "activateOriginateVersion": true,
+    "activateNewVersion": true,
+    "skipIfAlreadyActivated": true
+}
