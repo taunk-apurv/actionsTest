@@ -35,12 +35,16 @@ jobs:
                   echo y | sfdx plugins:install sfdx-git-delta
                   sfdx plugins 
 
-            #Installing Vlocity Plugin
-            - name: "Installing sfdx vlocity plugin"
-              run: |
-                  echo "SF_AUTOUPDATE_DISABLE=true" >> $GITHUB_ENV
-                  yes | sfdx plugins:install vlocity@latest
+            # Installing Vlocity Plugin
+            # - name: "Installing sfdx vlocity plugin"
+            #   run: |
+            #       echo "SF_AUTOUPDATE_DISABLE=true" >> $GITHUB_ENV
+            #       yes | sfdx plugins:install vlocity@latest
 
+            # Install Vlocity Build Tool
+            - name: Install Vlocity Build Tool
+              run: npm install -g vlocity
+              
             # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v3
@@ -67,8 +71,8 @@ jobs:
               # run: sfdx force:source:deploy -p force-app --testlevel RunLocalTests --json
               run: sfdx force:source:deploy -p force-app --testlevel NoTestRun --json
 
-            - name: 'Deploy destructive changes (if any) to Integration org'
-              run: sfdx force:mdapi:deploy -d "changed-sources/destructiveChanges" --checkonly --ignorewarnings 
+            # - name: 'Deploy destructive changes (if any) to Integration org'
+            #   run: sfdx force:mdapi:deploy -d "changed-sources/destructiveChanges" --checkonly --ignorewarnings 
 
             # Authenticate to org
             #- name: 'Authenticate to Staging Org to Staging org'
@@ -80,5 +84,18 @@ jobs:
             #- name: 'Deploy destructive changes (if any) to Staging org'
             #  run: sfdx force:mdapi:deploy -d "changed-sources/destructiveChanges" --checkonly --ignorewarnings
             
-            - name: Deploy Vlocity components
-              run: sfdx vlocity:packDeploy --jobName "Vlocity Deployment" --maxPoll 100
+            #- name: Deploy Vlocity components
+            # run: sfdx vlocity:packDeploy --jobName "Vlocity Deployment" --maxPoll 100
+
+            # Retrieve VlocityJob.json file from branch
+            # - name: Retrieve job.json from branch
+            #   run: |
+            #     git checkout ${{ github.ref }}
+            #     cp vlocityJob.json vlocityJob.json
+
+            # Deploy Vlocity Components
+            # - name: Deploy Vlocity Components
+            #   run: vlocity -sfdx.username apurvtaunk7-61638257896@industryapps.edu -sfdx.deployOnPull true -job vlocityJob.json
+            - name: Perform Delta Deployment
+              run: |
+                npx vlocity -sfdx.authUrl ./SFDX_INTEGRATION_URL.txt -sfdx.maxParallelThreads 4 -sfdx.sourceApiVersion 53.0 -job DeltaDeploymentJobName delta -job VBTDeploymentJobName
