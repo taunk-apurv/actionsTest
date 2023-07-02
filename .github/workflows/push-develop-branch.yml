@@ -44,9 +44,12 @@ jobs:
             # Install Vlocity Build Tool
             - name: Install Vlocity Build Tool
               run: |
-                    npm install -g vlocity
-                    echo npx vlocity --version
-              
+                  wget https://github.com/vlocityinc/vlocity_build/archive/refs/tags/v7.0.0.zip
+                  unzip v7.0.0.zip
+                  cd vlocity_build-7.0.0
+                  npm install
+                  npx vlocity --version
+                
             # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v3
@@ -100,4 +103,4 @@ jobs:
             #   run: vlocity -sfdx.username apurvtaunk7-61638257896@industryapps.edu -sfdx.deployOnPull true -job vlocityJob.json
             - name: Perform Delta Deployment
               run: |
-                npx vlocity -sfdx.authUrl ${{ secrets.SFDX_INTEGRATION_URL}} -sfdx.maxParallelThreads 4 -sfdx.sourceApiVersion 53.0 delta
+                npx vlocity -sfdx.authUrl ${{ secrets.SFDX_INTEGRATION_URL}} -sfdx.maxParallelThreads 4 -sfdx.sourceApiVersion 53.0 deploy ./vlocity
