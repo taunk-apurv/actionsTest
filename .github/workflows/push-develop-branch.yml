@@ -44,7 +44,7 @@ jobs:
             # Install Vlocity Build Tool
             - name: Install Vlocity Build Tool
               run: npm install -g vlocity
-
+              
             # Checkout the source code
             - name: 'Checkout source code'
               uses: actions/checkout@v3
